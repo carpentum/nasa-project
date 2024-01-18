@@ -2,7 +2,6 @@ const request = require("supertest");
 const app = require("../../app");
 const { mongoConnect, mongoDisconnect } = require("../../services/mongo");
 const { loadPlanetsData } = require("../../models/planets.model");
-const mongoose = require("mongoose");
 
 describe("Launches API", () => {
   beforeAll(async () => {
@@ -25,18 +24,18 @@ describe("Launches API", () => {
     const completeLaunchData = {
       mission: "USS Enterprise",
       rocket: "NCC 1701-D",
-      target: new mongoose.Types.ObjectId("Kepler-62 f"),
+      // target: "Kepler-62 f",
       launchDate: "January 4, 2028",
     };
     const launchDataWithoutDate = {
       mission: "USS Enterprise",
       rocket: "NCC 1701-D",
-      target: new mongoose.Types.ObjectId("Kepler-62 f"),
+      // target: "Kepler-62 f",
     };
     const launchDataWithInvalidDate = {
       mission: "USS Enterprise",
       rocket: "NCC 1701-D",
-      target: new mongoose.Types.ObjectId("Kepler-62 f"),
+      // target: "Kepler-62 f",
       launchDate: "zoot",
     };
 
