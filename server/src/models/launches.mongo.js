@@ -6,8 +6,7 @@ const launchesSchema = new mongoose.Schema({
   mission: { type: String, required: true },
   rockets: { type: String, required: true },
   target: {
-    type: mongoose.ObjectId,
-    ref: "Planet",
+    type: String,
   },
   customers: [String],
   upcoming: {
